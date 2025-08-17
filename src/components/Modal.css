@@ -1,0 +1,650 @@
+/* src/components/Modal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+    margin-right: 5%;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .form-group select {
+    width: 105%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  
+  .form-actions button {
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .submit-button {
+    background-color: #41b8d5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: medium;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #36a0c7;
+    transform: translateY(-2px);
+  }
+  
+  .submit-button:disabled {
+    background-color: #90c7db;
+    cursor: not-allowed;
+  }
+  
+  .cancel-button {
+    background-color: #d9d9d9;
+    border: none;
+    padding: 10px 20px;
+    font-size: medium;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #c4c4c4;
+    transform: translateY(-2px);
+  }
+  
+  .cancel-button:disabled {
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    background-color: #fff3f3;
+    color: #d32f2f;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border-left: 4px solid #d32f2f;
+  }
+  
+  .image-preview {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  .image-preview h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #555;
+  }
+
+  /* Add these styles to Modal.css */
+
+.confirmation-modal {
+  max-width: 400px;
+}
+
+.confirmation-message {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.delete-button:disabled {
+  background-color: #e4606d;
+  cursor: not-allowed;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  padding: 8px 0;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  color: #333;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-item.delete {
+  color: #dc3545;
+}
+
+.options-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.options-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.options-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot {
+  width: 4px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 50%;
+  margin: 1px;
+}
+
+/* Selection styling */
+.image-box.selected {
+  border: 2px solid #007bff;
+}
+
+.selection-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.2);
+}
+
+.image-box.selected .selection-overlay {
+  display: block;
+}
+
+.selection-checkbox {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 5;
+  width: 20px;
+  height: 20px;
+}
+
+.bulk-actions {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  animation: slide-up 0.3s ease;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.selection-count {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.selection-button.edit {
+  background-color: #41b8d5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.selection-button.edit:hover {
+  background-color:  #36a0c7;
+  transform: translateY(-2px);
+}
+
+.selection-button.delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.selection-button.delete:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.selection-button.cancel {
+  background-color: #d9d9d9;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.selection-button.cancel:hover {
+  background-color: #c4c4c4;
+  transform: translateY(-2px);
+}
+
+/* Add these styles to Modal.css */
+
+.image-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.selection-mode-button {
+  background-color: #d9d9d9;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.selection-mode-button:hover {
+  background-color: #c4c4c4;
+  transform: translateY(-2px);
+}
+
+.selection-active-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-container {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selection-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.image-box.selection-mode {
+  cursor: pointer;
+  position: relative;
+}
+
+.image-box.selection-mode::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image-box.selected.selection-mode::before {
+  background-color: rgba(0, 123, 255, 0.15);
+  border: 2px solid #007bff;
+}
+
+.dropdown-item.visibility {
+  color: #007bff;
+}
+
+.dropdown-item.visibility:hover {
+  background-color: #e6f3ff;
+}
+
+.image-preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* individual item modals */
+.image-modal-content {
+  display: flex;
+  position: relative;
+  max-width: 600px; 
+  min-height: 300px; 
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.image-modal-body {
+  display: flex;
+  align-items: center; 
+}
+
+.image-modal-image {
+  max-width: 50%; 
+  margin-right: 20px; 
+}
+
+.image-modal-text {
+  max-width: 500px; 
+}
+
+.image-modal-text h2 {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.image-modal-text p {
+  font-size: 16px;
+} 
+
+.image-modal-buttons button {
+  background-color: #41b8d5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px; 
+}
+
+.image-modal-buttons button:hover {
+  background-color: #36a0c7; 
+  transform: translateY(-2px); 
+}
+
+.image-modal-remove-item {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #d1cece;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.image-modal-remove-item:hover {
+  background-color: #c4c1c1;
+  transform: translateY(-2px); 
+}
+
+/* Set New Goal Modal */ 
+.set-new-goal-modal-content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  max-width: 550px; 
+  min-height: 300px; 
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.set-new-goal-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.set-new-goal-modal-title h2 { 
+  display: flex;
+  color: #41b8d5;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  padding-bottom: 15px;
+}
+
+.set-new-goal-modal-body {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 40px;
+} 
+
+.set-new-goal-form { 
+  display: grid; 
+  gap: 20px;
+  background-color: #41b7d537;
+  padding: 15px; 
+  border-radius: 8px;
+  width: 100%;
+}
+
+.set-new-goal-form label { 
+  font-size: 18px;
+  font-weight: bold;
+  color: #444; 
+  align-content: center;
+}
+
+.set-new-goal-form input { 
+  margin-top: 5px; 
+  padding: 5px;
+  width: 50%;
+}
+
+.set-new-goal-form input[type="checkbox"] {
+  width: 20px; 
+  height: 20px; 
+  cursor: pointer; 
+}
+
+.set-new-goal-modal-buttons {
+  display: flex; 
+  justify-content: flex-end; 
+  gap: 10px; 
+  position: absolute; 
+  bottom: 10px;
+  right: 10px;
+  width: auto;
+}
+
+.set-new-goal-modal-save {
+  background-color: #41b8d5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.set-new-goal-modal-save:hover {
+  background-color: #36a0c7;
+  transform: translateY(-2px);
+}
+
+.set-new-goal-modal-cancel {
+  background-color: #d1cece;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.set-new-goal-modal-cancel:hover {
+  background-color: #c4c1c1;
+  transform: translateY(-2px);
+}
+
+/* generate AI buttn */
+.generate-ai-button { 
+  background-color: #41b8d5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.generate-ai-button:hover {
+  background-color: #36a0c7;
+  transform: translateY(-2px);
+}

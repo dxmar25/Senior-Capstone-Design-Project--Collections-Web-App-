@@ -1,0 +1,126 @@
+.follow-list {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .follow-list h2 {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .follow-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .follow-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+  }
+  
+  .follow-item:hover {
+    background-color: #f1f3f5;
+  }
+  
+  .user-link {
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-name {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 3px;
+  }
+  
+  .user-username {
+    font-size: 13px;
+    color: #666;
+  }
+  
+  .unfollow-button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+  
+  .follow-button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .follow-button:hover {
+    background-color: #0069d9;
+  }
+  
+  .follow-button.following {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .follow-button.following:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .unfollow-button {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .unfollow-button:hover {
+    background-color: #f1f1f1;
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .empty-follow-list {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    color: #666;
+    font-size: 16px;
+  }
+
+  .user-info-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-list-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+  }

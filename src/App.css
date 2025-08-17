@@ -1,0 +1,591 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.app-header h1 {
+  font-size: 28px;
+  margin: 0;
+  color: #333;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+.action-buttons button {
+  background-color: #41b8d5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
+}
+
+.action-buttons button:hover {
+  background-color: #36a0c7;
+  transform: translateY(-2px);
+}
+
+.category-grid {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 24px; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.category-box {
+  /* position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 30px; Make room for tags */
+  width: auto;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding-bottom: 30px;
+}
+
+.category-box img {
+  /* width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease; */
+  width: 300px;
+  height: 250px; /* You can adjust this */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.category-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-box:hover img {
+  transform: scale(1.1);
+}
+
+.category-box .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.category-box:hover .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* .category-box.selected {
+  border: 5px solid #007bff;
+} */
+.category-box.selected {
+  border: 4px solid #6eb4ff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  background-color: rgba(0, 123, 255, 0.05);
+  transition: all 0.2s ease-in-out;
+} 
+
+
+.category-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 8px;
+  box-sizing: border-box;
+  font-weight: 500;
+  text-align: center;
+  min-height: 30px;
+}
+
+.category-tags {
+  position: absolute;
+  bottom: 38px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.image-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.image-box img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.image-box p {
+  padding: 10px;
+  margin: 0;
+  font-weight: 500;
+  color: #333;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.image-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 100%;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  padding: 20px;
+  background-color: #fff3f3;
+  color: #d32f2f;
+  border-radius: 4px;
+  margin: 20px 0;
+  border-left: 4px solid #d32f2f;
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .action-buttons {
+    width: 100%;
+  }
+  
+  .action-button {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* Add this to your CSS file (e.g., src/App.css or create a new component-specific CSS) */
+
+.connection-indicator {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 16px; 
+  display: inline-block;
+}
+
+.connection-indicator.connected {
+  background-color: #e6f7e6;
+  color: #28a745;
+  border: 1px solid #c3e6cb;
+}
+
+.connection-indicator.disconnected {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.connection-status {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.connection-status.connected {
+  color: #28a745;
+}
+
+.connection-status.disconnected {
+  color: #856404;
+}
+
+.placeholder-image-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-placeholder {
+  max-width: 300px;
+  max-height: 200px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.connection-indicator {
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.connection-indicator.connected {
+  background-color: #e6f7e6;
+  color: #28a745;
+  border: 1px solid #c3e6cb;
+}
+
+.connection-indicator.disconnected {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.connection-status {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.connection-status.connected {
+  color: #28a745;
+}
+
+.connection-status.disconnected {
+  color: #856404;
+}
+
+.user-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.delete-account-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-account-button:hover {
+  background-color: #c82333;
+}
+/* Add these styles to your existing App.css */
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-stats {
+  display: flex;
+  gap: 10px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  transition: background-color 0.2s;
+}
+
+.user-info:hover {
+  background-color: #e9ecef;
+}
+
+.welcome-message {
+  margin-right: 8px;
+  font-weight: 500;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  color: #666;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.dropdown-user-info {
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.dropdown-user-info:hover {
+  background-color: #ededed;
+}
+
+.dropdown-name {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.dropdown-email {
+  font-size: 12px;
+  color: #666;
+  word-break: break-word;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #cacaca;
+}
+
+.dropdown-item {
+  width: 100%;
+  padding: 15px 16px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #ededed;
+}
+
+.dropdown-item.delete {
+  color: #dc3545;
+}
+
+.dropdown-item.delete:hover {
+  background-color: #f8d7da;
+}
+
+.stat-button {
+  background: none;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.stat-button:hover {
+  background-color: #f0f0f0;
+}
+
+.stat-button strong {
+  color: #333;
+}
+
+/* Style for the modal follow/following lists */
+.follow-modal {
+  max-width: 500px;
+  max-height: 80vh;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-button:hover {
+  color: #333;
+}
+
+/* Additional styles for mobile responsiveness */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-left, .header-right {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .user-section {
+    width: 100%;
+  }
+  
+  .user-dropdown {
+    width: 100%;
+  }
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  transition: background-color 0.2s;
+}
+/* Wishlist styles */
+.section-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.wishlist-item {
+  position: relative;
+}
+
+.purchase-link {
+  background-color: #41b8d5;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+}
+
+.purchase-link:hover {
+  background-color: #36a0c7;
+  transform: translateY(-2px);
+}
+
+.selection-button.transfer {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: medium;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.selection-button.transfer:hover {
+  background-color:  #218838;
+  transform: translateY(-2px);
+}

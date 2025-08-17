@@ -1,0 +1,39 @@
+{
+    "categories": [
+      {
+        "name": "Manga",
+        "images": [
+          { "title": "Chainsaw Man Vol. 1", "path": "/local-images/manga/vol1.webp" },
+          { "title": "Chainsaw Man Vol. 2", "path": "/local-images/manga/vol2.webp" },
+          { "title": "Chainsaw Man Vol. 3", "path": "/local-images/manga/vol3.webp" },
+          { "title": "Chainsaw Man Vol. 4", "path": "/local-images/manga/vol4.webp" },
+          { "title": "Chainsaw Man Vol. 5", "path": "/local-images/manga/vol5.webp" },
+          { "title": "Chainsaw Man Vol. 6", "path": "/local-images/manga/vol6.webp" }
+        ],
+        "placeholder" : "/local-images/manga/manga-placeholder.webp"
+      },
+      {
+        "name": "Shoes",
+        "images": [
+          { "title": "Mountain Shoes", "path": "/local-images/shoes/shoe3.webp" },
+          { "title": "Cool Slides", "path": "/local-images/shoes/shoe5.jpg" },
+          { "title": "MTE Ultrarange's", "path": "/local-images/shoes/shoe4.jpg" },
+          { "title": "NB 408's", "path": "/local-images/shoes/shoe2.webp" },
+          { "title": "Sheesh, my friday shoes", "path": "/local-images/shoes/shoe1.webp" }
+        ],
+        "placeholder" : "/local-images/shoes/shoes-placeholder.jpg"
+      },
+      {
+        "name": "Vinyls",
+        "images": [
+          { "title": "DAMN.", "path": "/local-images/vinals/alb1.webp" },
+          { "title": "GNX", "path": "/local-images/vinals/alb2.webp" },
+          { "title": "Good Kid m.a.a.d City", "path": "/local-images/vinals/alb3.webp" },
+          { "title": "Mr. Moral", "path": "/local-images/vinals/alb4.webp" },
+          { "title": "To Pimp a Butterfly", "path": "/local-images/vinals/alb6.webp" },
+          { "title": "untitled-unmastered", "path": "/local-images/vinals/alb7.webp" }
+        ],
+        "placeholder" : "/local-images/vinals/vinals-placeholder.jpg"
+      }
+    ]
+  }

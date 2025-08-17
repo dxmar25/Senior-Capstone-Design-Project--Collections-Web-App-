@@ -1,0 +1,278 @@
+.tag-input-container {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .add-tag-button {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-tag-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    min-height: 40px;
+    padding: 8px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .tag-item {
+    display: flex;
+    align-items: center;
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 4px;
+    padding: 4px 8px;
+  }
+  
+  .tag-text {
+    margin-right: 8px;
+    font-size: 14px;
+  }
+  
+  .remove-tag-button {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .remove-tag-button:hover {
+    color: #f5222d;
+  }
+  
+  .no-tags-message {
+    color: #999;
+    margin: 8px 0;
+    font-style: italic;
+    font-size: 14px;
+  }
+  
+  .tags-toggle {
+    margin-bottom: 16px;
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .checkbox-label input {
+    margin-right: 8px;
+  }
+  
+  /* Add visibility for tags in CategoryList and ImageGrid */
+  .category-tags, .image-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+  }
+  
+  .tag-badge {
+    background-color: #e6f7ff;
+    border: 1px solid #91d5ff;
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 15px;
+    color: #1890ff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+  }
+
+  p.no-items-text {
+    font-size: 24px;
+    color: #8a8a8a; /* Light grey */
+    text-align: left;
+    margin-top: 30px;
+    font-weight: 300;
+  }
+  
+
+  /* Tag Search Results Styles */
+.tag-result-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 15px;
+  background-color: #f0f8ff;
+  padding: 8px;
+  border-radius: 6px;
+  min-width: 120px;
+}
+
+.tag-result-type {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.tag-result-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.tag-result-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.tag-badge {
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.tag-badge:hover {
+  background-color: #1890ff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Improved Tag Search Modal Styling */
+.follow-modal {
+  max-width: 550px;
+  max-height: 80vh;
+  padding: 16px;
+}
+
+.modal-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+}
+
+.follow-list-container {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.follow-item {
+  display: flex;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.follow-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.user-info-wrapper {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.user-list-avatar {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.user-info {
+  min-width: 0;
+}
+
+.user-name {
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-username {
+  font-size: 13px;
+}
+
+/* Tag Results Styling Improvements */
+.tag-result-preview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #f0f8ff;
+  margin-left: 10px;
+  flex-shrink: 0;
+  max-width: 180px;
+}
+
+.tag-result-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.tag-result-type {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+.tag-result-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag-result-thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+/* Better Empty State */
+.empty-follow-list {
+  padding: 30px 20px;
+  text-align: center;
+  background-color: #f9f9fb;
+  border-radius: 10px;
+  margin: 20px 0;
+  color: #666;
+  font-size: 15px;
+}
